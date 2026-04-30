@@ -7,11 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #dbb61b; /* Amarillo */
-            --whatsapp: #25D366; /* Verde WhatsApp */
+            --primary: #dbb61b; /* Amarillo marca */
+            --whatsapp: #25D366; 
             --white: #ffffff;
             --black: #000000;
-            --gray: #1a1a1a;
         }
 
         * {
@@ -36,7 +35,6 @@
 
         header {
             background-color: var(--black);
-            color: var(--white);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
@@ -54,8 +52,10 @@
             text-decoration: none;
         }
 
+        /* DISEÑO DE MARCA: Letreros Blanco, Cámpora Amarillo */
         .logo-text {
             color: var(--white);
+            font-size: 1.4rem;
         }
 
         .logo-text span {
@@ -63,7 +63,7 @@
         }
 
         .logo-img {
-            height: 50px;
+            height: 45px;
             width: auto;
         }
 
@@ -94,16 +94,6 @@
         .btn-wa {
             background-color: var(--whatsapp);
             color: white;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--black);
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
         }
 
         .hero {
@@ -188,22 +178,38 @@
             margin-bottom: 10px;
         }
 
-        .diseno {
-            background-color: var(--black);
-            color: white;
+        /* DISEÑO PREFOOTER ACTUALIZADO (Según tu imagen) */
+        .prefooter {
+            background-color: var(--primary);
+            color: var(--black);
             text-align: center;
+            padding: 100px 5%;
         }
 
-        .diseno .section-title span {
+        .prefooter h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .prefooter h2 span {
             color: var(--white);
         }
 
-        .impresion-box {
-            margin: 40px auto 0;
-            max-width: 700px;
-            padding: 30px;
-            border: 3px dashed var(--primary);
-            border-radius: 12px;
+        .prefooter p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .btn-black {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 6px;
+            font-size: 1.1rem;
         }
 
         /* FOOTER ESTILO IMAGEN */
@@ -211,7 +217,7 @@
             background-color: var(--black);
             color: var(--white);
             padding: 60px 8% 30px;
-            border-top: 5px solid var(--primary);
+            border-top: 1px solid #222;
         }
 
         .footer-grid {
@@ -219,14 +225,11 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 50px;
-            text-align: left;
         }
 
         .footer-col h3 {
-            color: var(--white);
-            margin-bottom: 20px;
             font-weight: 800;
-            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .footer-col h3 span {
@@ -236,13 +239,8 @@
         .footer-col h4 {
             color: var(--primary);
             margin-bottom: 20px;
-            text-transform: capitalize;
-        }
-
-        .footer-col p {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         .footer-link {
@@ -252,11 +250,7 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 12px;
-            transition: color 0.3s;
-        }
-
-        .footer-link:hover {
-            color: var(--primary);
+            font-size: 0.9rem;
         }
 
         .footer-bottom {
@@ -271,8 +265,7 @@
             .nosotros { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.2rem; }
             nav ul { display: none; }
-            .footer-grid { text-align: center; }
-            .footer-link { justify-content: center; }
+            .prefooter h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -298,13 +291,14 @@
         <h1 class="font-logo">Impacto Visual de Alta Calidad</h1>
         <p>71 años transformando la imagen de comercios y empresas.</p>
         <br>
-        <a href="#trabajos" class="btn btn-primary">Ver Galería</a>
+        <a href="#trabajos" class="btn btn-wa" style="background-color: var(--primary); color:black">Ver Galería</a>
     </section>
 
     <section id="nosotros" class="nosotros">
         <div>
             <h2 class="section-title" style="text-align: left;">Desde <span>1955</span><br>Comunicando<br>Tu Imagen</h2>
-            <p>Somos una empresa familiar con más de siete décadas de trayectoria. Nos especializamos en fusionar el arte tradicional del letrista con las tecnologías de impresión y corte más modernas para ofrecer resultados duraderos y estéticos.</p>
+            <p>Hola, somos Letreros Cámpora. Nos enorgullece ser una empresa familiar que ha pasado de generación en generación, adaptándonos a las nuevas tecnologías sin perder la esencia artesanal que nos caracteriza. <br><br>
+            Desde grandes marquesinas hasta los detalles más finos en interiores, trabajamos codo a codo con cada cliente. Queremos escucharte, asesorarte y brindarte un servicio cercano, profesional y de excelencia.</p>
         </div>
         <div class="video-container">
             <video autoplay loop muted playsinline>
@@ -317,7 +311,6 @@
         <h2 class="section-title">Nuestros <span>Trabajos</span></h2>
         
         <div class="portfolio-grid">
-            
             <div class="card">
                 <img src="FC1.jpeg" id="slider-fc" alt="Fachadas">
                 <div class="card-content">
@@ -325,7 +318,6 @@
                     <h3>Renovación total de frentes comerciales.</h3>
                 </div>
             </div>
-
             <div class="card">
                 <img src="LC17.jpeg" id="slider-lc" alt="Corpóreas">
                 <div class="card-content">
@@ -333,7 +325,6 @@
                     <h3>Letras con relieve para marcas que destacan.</h3>
                 </div>
             </div>
-
             <div class="card">
                 <img src="C19.jpeg" id="slider-c" alt="Carteles">
                 <div class="card-content">
@@ -341,7 +332,6 @@
                     <h3>Estructuras de gran formato y lona tensada.</h3>
                 </div>
             </div>
-
             <div class="card">
                 <img src="P17.jpeg" id="slider-p" alt="Ploteados">
                 <div class="card-content">
@@ -349,7 +339,6 @@
                     <h3>Vinilos decorativos y rotulación de flota.</h3>
                 </div>
             </div>
-
             <div class="card">
                 <img src="PI1.jpeg" id="slider-pi" alt="Pintados">
                 <div class="card-content">
@@ -357,7 +346,6 @@
                     <h3>El arte tradicional del letrismo a mano.</h3>
                 </div>
             </div>
-
             <div class="card">
                 <img src="ACR5.jpeg" id="slider-acr" alt="Acrílicos">
                 <div class="card-content">
@@ -365,54 +353,37 @@
                     <h3>Señalética técnica y grabados láser.</h3>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section id="diseno" class="diseno">
-        <h2 class="section-title">¿No tenés un <span>Diseño</span>?</h2>
-        <p>Creamos tu identidad visual desde cero. Logotipos, volantes y cartelería completa.</p>
-        
-        <div class="impresion-box">
-            <h3 style="color:var(--primary)">Servicio de Impresión</h3>
-            <p>Contamos con servicio de impresión para archivos externos. Si ya tenés tu diseño, lo imprimimos y podés retirarlo por nuestro local.</p>
-        </div>
+    <!-- SECCIÓN PREFOOTER COPIADA DE TU IMAGEN -->
+    <section class="prefooter">
+        <h2>¿AÚN NO TENÉS TU <span>IMAGEN</span>?</h2>
+        <p>No te preocupes. Podemos realizar el diseño de tu imagen si aún no la tienen.<br>
+        Desde carteles, banners, identidad visual, vidrieras, flyers y mucho más. Tenemos todo resuelto para que tu marca se vea profesional.</p>
+        <a href="https://wa.me/5491167561336" class="btn btn-black" target="_blank">Hablemos de tu diseño</a>
     </section>
 
     <footer id="contacto">
         <div class="footer-grid">
-            <!-- Columna 1 -->
             <div class="footer-col">
-                <h3>LETREROS <span>CÁMPORA</span></h3>
-                <p>Tu empresa familiar de confianza. Recordá que realizamos presupuestos sin costo, no dudes en escribirnos.</p>
+                <h3 class="font-logo">LETREROS <span>CÁMPORA</span></h3>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Tu empresa familiar de confianza. Recordá que realizamos presupuestos sin costo, no dudes en escribirnos.</p>
             </div>
 
-            <!-- Columna 2 -->
             <div class="footer-col">
                 <h4>Contacto Directo</h4>
-                <a href="https://wa.me/5491167561336" class="footer-link" target="_blank">
-                    📞 WhatsApp: +54 9 11 6756-1336
-                </a>
-                <a href="mailto:letreroscampora@yahoo.com.ar" class="footer-link">
-                    ✉️ Email: letreroscampora@yahoo.com.ar
-                </a>
-                <a href="https://maps.app.goo.gl/o1H5YpY8vPzW5PZ88" class="footer-link" target="_blank">
-                    📍 Buenos Aires, Argentina
-                </a>
+                <a href="https://wa.me/5491167561336" class="footer-link" target="_blank">📞 WhatsApp: +54 9 11 6756-1336</a>
+                <a href="mailto:letreroscampora@yahoo.com.ar" class="footer-link">✉️ Email: letreroscampora@yahoo.com.ar</a>
+                <a href="https://maps.app.goo.gl/o1H5YpY8vPzW5PZ88" class="footer-link" target="_blank">📍 Buenos Aires, Argentina</a>
             </div>
 
-            <!-- Columna 3 -->
             <div class="footer-col">
                 <h4>Nuestras Redes</h4>
-                <a href="https://www.instagram.com/letreroscampora" class="footer-link" target="_blank">
-                    📸 Instagram
-                </a>
-                <a href="https://www.facebook.com/LetrerosCampora" class="footer-link" target="_blank">
-                    👥 Facebook
-                </a>
-                <a href="https://maps.app.goo.gl/o1H5YpY8vPzW5PZ88" class="footer-link" target="_blank">
-                    🗺️ Google Maps
-                </a>
+                <!-- ENLACE DE INSTAGRAM ACTUALIZADO -->
+                <a href="https://www.instagram.com/letreroscampora.temperley" class="footer-link" target="_blank">📸 Instagram</a>
+                <a href="https://www.facebook.com/LetrerosCampora" class="footer-link" target="_blank">👥 Facebook</a>
+                <a href="https://maps.app.goo.gl/o1H5YpY8vPzW5PZ88" class="footer-link" target="_blank">🗺️ Google Maps</a>
             </div>
         </div>
 
@@ -423,21 +394,18 @@
 
     <script>
         function setupSlider(id, prefix, max) {
-            let current = 1; // Empezamos en 1 según tu nomenclatura
+            let current = 1;
             const imgElement = document.getElementById(id);
             
             setInterval(() => {
                 current++;
                 if (current > max) current = 1;
-                
                 imgElement.style.opacity = 0;
-                
                 setTimeout(() => {
                     imgElement.src = prefix + current + ".jpeg";
                     imgElement.style.opacity = 1;
                 }, 800);
-                
-            }, 6000); // Cambio cada 6 segundos
+            }, 6000); 
         }
 
         window.onload = () => {
