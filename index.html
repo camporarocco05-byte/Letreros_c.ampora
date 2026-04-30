@@ -54,8 +54,11 @@
             text-decoration: none;
         }
 
-        /* CORRECCIÓN 3: Cámpora en Amarillo */
         .logo-text {
+            color: var(--white);
+        }
+
+        .logo-text span {
             color: var(--primary);
         }
 
@@ -88,7 +91,6 @@
             cursor: pointer;
         }
 
-        /* CORRECCIÓN 2: Botón WhatsApp Verde */
         .btn-wa {
             background-color: var(--whatsapp);
             color: white;
@@ -168,7 +170,7 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
-            transition: opacity 0.5s ease-in-out; /* Suaviza el cambio de foto */
+            transition: opacity 0.8s ease-in-out;
         }
 
         .card-content {
@@ -182,15 +184,16 @@
             font-size: 0.8rem;
             border-radius: 4px;
             font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
         .diseno {
-            background-color: var(--black); /* Cambiado a negro para que resalte más lo amarillo/blanco */
+            background-color: var(--black);
             color: white;
             text-align: center;
         }
 
-        /* CORRECCIÓN 1: Diseño en Blanco */
         .diseno .section-title span {
             color: var(--white);
         }
@@ -203,27 +206,73 @@
             border-radius: 12px;
         }
 
-        /* CORRECCIÓN 4: Footer anterior sin QRs */
+        /* FOOTER ESTILO IMAGEN */
         footer {
             background-color: var(--black);
             color: var(--white);
-            padding: 40px 5%;
-            text-align: center;
-            border-top: 3px solid var(--primary);
+            padding: 60px 8% 30px;
+            border-top: 5px solid var(--primary);
         }
 
-        .footer-info {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .footer-col h3 span {
+            color: var(--primary);
+        }
+
+        .footer-col h4 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+
+        .footer-col p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            color: var(--white);
+            text-decoration: none;
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 30px;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 25px;
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.6;
         }
 
         @media (max-width: 768px) {
             .nosotros { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.2rem; }
             nav ul { display: none; }
+            .footer-grid { text-align: center; }
+            .footer-link { justify-content: center; }
         }
     </style>
 </head>
@@ -232,7 +281,7 @@
     <header>
         <a href="#" class="logo-container">
             <img src="c_corporea.svg" alt="Letreros Cámpora" class="logo-img">
-            <div class="logo-text font-logo">Letreros Cámpora</div>
+            <div class="logo-text font-logo">Letreros <span>Cámpora</span></div>
         </a>
         <nav>
             <ul>
@@ -242,7 +291,7 @@
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
-        <a href="https://wa.me/5491167561336" class="btn btn-wa">WhatsApp</a>
+        <a href="https://wa.me/5491167561336" class="btn btn-wa" target="_blank">WhatsApp</a>
     </header>
 
     <section id="inicio" class="hero">
@@ -255,7 +304,7 @@
     <section id="nosotros" class="nosotros">
         <div>
             <h2 class="section-title" style="text-align: left;">Desde <span>1955</span><br>Comunicando<br>Tu Imagen</h2>
-            <p>Hola, somos Letreros Cámpora. Nos enorgullece ser una empresa familiar que ha pasado de generación en generación, adaptándonos a las nuevas tecnologías sin perder la esencia artesanal que nos caracteriza. Desde 1955 brindando excelencia.</p>
+            <p>Somos una empresa familiar con más de siete décadas de trayectoria. Nos especializamos en fusionar el arte tradicional del letrista con las tecnologías de impresión y corte más modernas para ofrecer resultados duraderos y estéticos.</p>
         </div>
         <div class="video-container">
             <video autoplay loop muted playsinline>
@@ -266,61 +315,54 @@
 
     <section id="trabajos" style="background-color: #f4f4f4;">
         <h2 class="section-title">Nuestros <span>Trabajos</span></h2>
-        <p style="text-align:center; margin-bottom: 20px; font-style: italic;">Las fotos cambian automáticamente cada 3 segundos</p>
         
         <div class="portfolio-grid">
             
-            <!-- Foto Slider 1: Fachadas -->
             <div class="card">
-                <img src="FC.jpeg" id="slider-fc" alt="Fachadas">
+                <img src="FC1.jpeg" id="slider-fc" alt="Fachadas">
                 <div class="card-content">
                     <span class="badge">Fachadas</span>
-                    <h3>Proyectos Integrales</h3>
+                    <h3>Renovación total de frentes comerciales.</h3>
                 </div>
             </div>
 
-            <!-- Foto Slider 2: Letras Corpóreas -->
             <div class="card">
-                <img src="LC.jpeg" id="slider-lc" alt="Corpóreas">
+                <img src="LC17.jpeg" id="slider-lc" alt="Corpóreas">
                 <div class="card-content">
                     <span class="badge">Corpóreas</span>
-                    <h3>Relieve y Elegancia</h3>
+                    <h3>Letras con relieve para marcas que destacan.</h3>
                 </div>
             </div>
 
-            <!-- Foto Slider 3: Carteles -->
             <div class="card">
-                <img src="C.jpeg" id="slider-c" alt="Carteles">
+                <img src="C19.jpeg" id="slider-c" alt="Carteles">
                 <div class="card-content">
                     <span class="badge">Carteles</span>
-                    <h3>Estructuras Metálicas</h3>
+                    <h3>Estructuras de gran formato y lona tensada.</h3>
                 </div>
             </div>
 
-            <!-- Foto Slider 4: Ploteados -->
             <div class="card">
-                <img src="P.jpeg" id="slider-p" alt="Ploteados">
+                <img src="P17.jpeg" id="slider-p" alt="Ploteados">
                 <div class="card-content">
                     <span class="badge">Ploteados</span>
-                    <h3>Vinilos y Gráfica</h3>
+                    <h3>Vinilos decorativos y rotulación de flota.</h3>
                 </div>
             </div>
 
-            <!-- Foto Slider 5: Pintados -->
             <div class="card">
-                <img src="PI.jpeg" id="slider-pi" alt="Pintados">
+                <img src="PI1.jpeg" id="slider-pi" alt="Pintados">
                 <div class="card-content">
                     <span class="badge">Pintados</span>
-                    <h3>Oficio Artesanal</h3>
+                    <h3>El arte tradicional del letrismo a mano.</h3>
                 </div>
             </div>
 
-            <!-- Foto Slider 6: Acrílicos -->
             <div class="card">
-                <img src="ACR.jpeg" id="slider-acr" alt="Acrílicos">
+                <img src="ACR5.jpeg" id="slider-acr" alt="Acrílicos">
                 <div class="card-content">
                     <span class="badge">Acrílicos</span>
-                    <h3>Placas y Señalética</h3>
+                    <h3>Señalética técnica y grabados láser.</h3>
                 </div>
             </div>
 
@@ -338,60 +380,74 @@
     </section>
 
     <footer id="contacto">
-        <div class="footer-info">
-            <div>
-                <h4 style="color:var(--primary)">Ubicación</h4>
-                <p>N. Avellaneda 1010, Temperley</p>
-                <p>Buenos Aires, Argentina</p>
+        <div class="footer-grid">
+            <!-- Columna 1 -->
+            <div class="footer-col">
+                <h3>LETREROS <span>CÁMPORA</span></h3>
+                <p>Tu empresa familiar de confianza. Recordá que realizamos presupuestos sin costo, no dudes en escribirnos.</p>
             </div>
-            <div>
-                <h4 style="color:var(--primary)">Contacto</h4>
-                <p>WhatsApp: 11 6756-1336</p>
-                <p>letreroscampora@yahoo.com.ar</p>
+
+            <!-- Columna 2 -->
+            <div class="footer-col">
+                <h4>Contacto Directo</h4>
+                <a href="https://wa.me/5491167561336" class="footer-link" target="_blank">
+                    📞 WhatsApp: +54 9 11 6756-1336
+                </a>
+                <a href="mailto:letreroscampora@yahoo.com.ar" class="footer-link">
+                    ✉️ Email: letreroscampora@yahoo.com.ar
+                </a>
+                <a href="https://maps.app.goo.gl/o1H5YpY8vPzW5PZ88" class="footer-link" target="_blank">
+                    📍 Buenos Aires, Argentina
+                </a>
             </div>
-            <div>
-                <h4 style="color:var(--primary)">Horarios</h4>
-                <p>Lunes a Viernes</p>
-                <p>9:00 a 18:00 hs</p>
+
+            <!-- Columna 3 -->
+            <div class="footer-col">
+                <h4>Nuestras Redes</h4>
+                <a href="https://www.instagram.com/letreroscampora" class="footer-link" target="_blank">
+                    📸 Instagram
+                </a>
+                <a href="https://www.facebook.com/LetrerosCampora" class="footer-link" target="_blank">
+                    👥 Facebook
+                </a>
+                <a href="https://maps.app.goo.gl/o1H5YpY8vPzW5PZ88" class="footer-link" target="_blank">
+                    🗺️ Google Maps
+                </a>
             </div>
         </div>
-        <p style="font-size: 0.8rem; opacity: 0.6; border-top: 1px solid #333; padding-top: 20px;">
-            © 2026 Letreros Cámpora - 71 Años de Trayectoria
-        </p>
+
+        <div class="footer-bottom">
+            © 2026 Letreros Cámpora. Todos los derechos reservados.
+        </div>
     </footer>
 
     <script>
-        // Lógica del Slider Automático
         function setupSlider(id, prefix, max) {
-            let current = 0;
+            let current = 1; // Empezamos en 1 según tu nomenclatura
             const imgElement = document.getElementById(id);
             
             setInterval(() => {
                 current++;
-                if (current > max) current = 0;
+                if (current > max) current = 1;
                 
-                // La primera foto es 'Prefijo.jpeg', las siguientes 'Prefijo1.jpeg', etc.
-                let suffix = current === 0 ? "" : current;
-                imgElement.style.opacity = 0; // Efecto fade out
+                imgElement.style.opacity = 0;
                 
                 setTimeout(() => {
-                    imgElement.src = prefix + suffix + ".jpeg";
-                    imgElement.style.opacity = 1; // Efecto fade in
-                }, 500);
+                    imgElement.src = prefix + current + ".jpeg";
+                    imgElement.style.opacity = 1;
+                }, 800);
                 
-            }, 3000); // Cambia cada 3 segundos
+            }, 6000); // Cambio cada 6 segundos
         }
 
-        // Iniciamos los sliders con las cantidades que me diste
         window.onload = () => {
-            setupSlider('slider-fc', 'FC', 9);   // Fachadas
-            setupSlider('slider-lc', 'LC', 18);  // Corpóreas
-            setupSlider('slider-c', 'C', 27);    // Carteles
-            setupSlider('slider-p', 'P', 18);    // Ploteados
-            setupSlider('slider-pi', 'PI', 4);   // Pintados
-            setupSlider('slider-acr', 'ACR', 5); // Acrílicos
+            setupSlider('slider-fc', 'FC', 9);
+            setupSlider('slider-lc', 'LC', 18);
+            setupSlider('slider-c', 'C', 27);
+            setupSlider('slider-p', 'P', 18);
+            setupSlider('slider-pi', 'PI', 4);
+            setupSlider('slider-acr', 'ACR', 5);
         };
     </script>
-
 </body>
 </html>
