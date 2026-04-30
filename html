@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letreros Cámpora - Cartelería y Diseño</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #dbb61b;
+            --white: #ffffff;
+            --black: #000000;
+            --gray: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .font-logo {
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--black);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #e5c330;
+        }
+
+        .hero {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 120px 5%;
+            text-align: center;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('C.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .nosotros {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            background: var(--primary);
+            color: var(--black);
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .diseno {
+            background-color: var(--primary);
+            text-align: center;
+        }
+
+        .impresion-box {
+            margin: 40px auto 0;
+            max-width: 700px;
+            padding: 30px;
+            border: 3px dashed var(--black);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 60px 5% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .qr-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .qr-box {
+            text-align: center;
+        }
+
+        .qr-box img {
+            width: 100px;
+            height: 100px;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .nosotros { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo-container">
+            <img src="logo_campora.png" alt="Letreros Cámpora" class="logo-img">
+            <div class="logo-text font-logo">Cámpora</div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Historia</a></li>
+                <li><a href="#trabajos">Trabajos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/5491167561336" class="btn">WhatsApp</a>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1 class="font-logo">Impacto Visual de Alta Calidad</h1>
+        <p>70 años transformando la imagen de comercios y empresas.</p>
+        <br>
+        <a href="#trabajos" class="btn">Ver Galería</a>
+    </section>
+
+    <section id="nosotros" class="nosotros">
+        <div>
+            <h2 class="section-title" style="text-align: left;">Desde <span>1955</span><br>Comunicando<br>Tu Imagen</h2>
+            <p>Somos una empresa familiar dedicada a la cartelería tradicional y moderna. Combinamos el oficio del letrista con la tecnología de hoy.</p>
+        </div>
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="Comp_1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section id="trabajos" style="background-color: #f4f4f4;">
+        <h2 class="section-title">Nuestros <span>Trabajos</span></h2>
+        <div class="portfolio-grid">
+            
+            <!-- FC: Fachadas -->
+            <div class="card">
+                <img src="FC.jpeg" alt="Fachadas">
+                <div class="card-content">
+                    <span class="badge">9 Fotos</span>
+                    <h3>Fachadas Completas</h3>
+                    <p>Proyectos integrales de renovación exterior.</p>
+                </div>
+            </div>
+
+            <!-- LC: Letras Corpóreas -->
+            <div class="card">
+                <img src="LC.jpeg" alt="Corpóreas">
+                <div class="card-content">
+                    <span class="badge">18 Fotos</span>
+                    <h3>Letras Corpóreas</h3>
+                    <p>Relieve y elegancia en diversos materiales.</p>
+                </div>
+            </div>
+
+            <!-- C: Carteles -->
+            <div class="card">
+                <img src="C.jpeg" alt="Carteles">
+                <div class="card-content">
+                    <span class="badge">27 Fotos</span>
+                    <h3>Carteles</h3>
+                    <p>Estructuras de gran visibilidad y durabilidad.</p>
+                </div>
+            </div>
+
+            <!-- P: Ploteados -->
+            <div class="card">
+                <img src="P.jpeg" alt="Ploteados">
+                <div class="card-content">
+                    <span class="badge">18 Fotos</span>
+                    <h3>Ploteados</h3>
+                    <p>Vinilos para vidrieras y vehículos.</p>
+                </div>
+            </div>
+
+            <!-- PI: Pintados -->
+            <div class="card">
+                <img src="PI.jpeg" alt="Pintados">
+                <div class="card-content">
+                    <span class="badge">4 Fotos</span>
+                    <h3>Pintados</h3>
+                    <p>Trabajos artesanales con terminación clásica.</p>
+                </div>
+            </div>
+
+            <!-- ACR: Acrílicos -->
+            <div class="card">
+                <img src="ACR.jpeg" alt="Acrílicos">
+                <div class="card-content">
+                    <span class="badge">5 Fotos</span>
+                    <h3>Acrílicos</h3>
+                    <p>Placas grabadas y señalética premium.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="diseno" class="diseno">
+        <h2 class="section-title">¿No tenés un <span>Diseño</span>?</h2>
+        <p>Creamos tu identidad visual desde cero. Logotipos, volantes y cartelería completa.</p>
+        
+        <div class="impresion-box">
+            <h3>Servicio de Impresión</h3>
+            <p>Contamos con servicio de impresión para archivos externos. Si ya tenés tu diseño, lo imprimimos y podés retirarlo por nuestro local.</p>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-grid">
+            <div>
+                <h4 style="color:var(--primary)">Ubicación</h4>
+                <p>N. Avellaneda 1010, Temperley</p>
+                <p>Buenos Aires, Argentina</p>
+            </div>
+            <div>
+                <h4 style="color:var(--primary)">Contacto</h4>
+                <p>WhatsApp: 11 6756-1336</p>
+                <p>letreroscampora@yahoo.com.ar</p>
+            </div>
+            <div>
+                <h4 style="color:var(--primary)">Seguinos</h4>
+                <div class="qr-container">
+                    <div class="qr-box">
+                        <img src="qr_ig.png" alt="Instagram">
+                        <p style="font-size: 0.7rem;">Instagram</p>
+                    </div>
+                    <div class="qr-box">
+                        <img src="qr_wa.png" alt="WhatsApp">
+                        <p style="font-size: 0.7rem;">WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center><p style="font-size: 0.8rem; opacity: 0.6;">© 2026 Letreros Cámpora - 70 Años de Trayectoria</p></center>
+    </footer>
+
+</body>
+</html>
